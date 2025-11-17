@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte - Eli</title>
+    <meta name="description" content="Contacta con el equipo de soporte de Eli para publicidad o reportar problemas">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .support-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 120px 20px 60px;
+        }
+        .support-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .support-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 24px;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            color: var(--primary-dark);
+            transform: translateX(-4px);
+        }
+        .tabs-container {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+            background: var(--background-light);
+            padding: 8px;
+            border-radius: var(--radius-md);
+        }
+        .tab {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 16px;
+            border-radius: var(--radius-md);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+        .tab:hover {
+            color: var(--primary);
+            background: rgba(139, 92, 246, 0.1);
+        }
+        .tab.active {
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--primary);
+        }
+        .tab svg {
+            width: 20px;
+            height: 20px;
+        }
+        .form-card {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+        .form-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        .form-icon.warning {
+            background: linear-gradient(135deg, var(--warning) 0%, #FBBF24 100%);
+        }
+        .form-icon svg {
+            width: 32px;
+            height: 32px;
+            color: white;
+        }
+        .form-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        .form-description {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-family: inherit;
+            color: var(--text);
+            background: var(--background-light);
+            transition: var(--transition);
+        }
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .form-textarea.large {
+            min-height: 200px;
+        }
+        .submit-button {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .submit-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(139, 92, 246, 0.3);
+        }
+        .submit-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .form-hidden {
+            display: none;
+        }
+        .success-message {
+            background: var(--success);
+            color: white;
+            padding: 16px;
+            border-radius: var(--radius-md);
+            margin-bottom: 24px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .error-message {
+            background: var(--error);
+            color: white;
+            padding: 16px;
+            border-radius: var(--radius-md);
+            margin-bottom: 24px;
+            text-align: center;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .support-container {
+                padding: 100px 20px 40px;
+            }
+            .support-title {
+                font-size: 2rem;
+            }
+            .form-card {
+                padding: 24px;
+            }
+            .tabs-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-icon">⭐</span>
+                    <span class="logo-text">Eli</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#caracteristicas">Características</a></li>
+                    <li><a href="index.html#como-funciona">Cómo Funciona</a></li>
+                    <li><a href="index.html#planes">Planes</a></li>
+                    <li><a href="support.html">Soporte</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="support-container">
+        <a href="index.html" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Volver al inicio
+        </a>
+        
+        <div class="support-header">
+            <h1 class="support-title">Soporte</h1>
+            <p style="color: var(--text-light);">Estamos aquí para ayudarte</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs-container">
+            <button class="tab active" id="advertisingTab" onclick="switchTab('advertising')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+                Publicidad
+            </button>
+            <button class="tab" id="reportTab" onclick="switchTab('report')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                </svg>
+                Reportar Problema
+            </button>
+        </div>
+
+        <!-- Advertising Form -->
+        <div id="advertisingForm" class="form-card">
+            <div class="form-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+            </div>
+            <h2 class="form-title">Solicitud de Publicidad</h2>
+            <p class="form-description">
+                ¿Interesado en publicitar en nuestra aplicación? Completa el formulario y nos pondremos en contacto contigo.
+            </p>
+            
+            <div id="advertisingMessage"></div>
+            
+            <form id="advertisingFormElement" onsubmit="handleAdvertisingSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label" for="companyName">Nombre de la Empresa *</label>
+                    <input 
+                        type="text" 
+                        id="companyName" 
+                        class="form-input" 
+                        placeholder="Ej: Mi Empresa S.A."
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="contactName">Nombre de Contacto *</label>
+                    <input 
+                        type="text" 
+                        id="contactName" 
+                        class="form-input" 
+                        placeholder="Tu nombre completo"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="adEmail">Correo Electrónico *</label>
+                    <input 
+                        type="email" 
+                        id="adEmail" 
+                        class="form-input" 
+                        placeholder="tu@email.com"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="adPhone">Teléfono</label>
+                    <input 
+                        type="tel" 
+                        id="adPhone" 
+                        class="form-input" 
+                        placeholder="+1 234 567 8900"
+                    >
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="adMessage">Mensaje</label>
+                    <textarea 
+                        id="adMessage" 
+                        class="form-textarea" 
+                        placeholder="Cuéntanos sobre tu propuesta de publicidad..."
+                        rows="5"
+                    ></textarea>
+                </div>
+                <button type="submit" class="submit-button" id="advertisingSubmitBtn">
+                    <span>Enviar Solicitud</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <!-- Report Form -->
+        <div id="reportForm" class="form-card form-hidden">
+            <div class="form-icon warning">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                </svg>
+            </div>
+            <h2 class="form-title">Reportar un Problema</h2>
+            <p class="form-description">
+                ¿Encontraste un error o tienes alguna sugerencia? Ayúdanos a mejorar reportando el problema.
+            </p>
+            
+            <div id="reportMessage"></div>
+            
+            <form id="reportFormElement" onsubmit="handleReportSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label" for="reportSubject">Asunto *</label>
+                    <input 
+                        type="text" 
+                        id="reportSubject" 
+                        class="form-input" 
+                        placeholder="Ej: Error al completar tarea"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="reportDescription">Descripción *</label>
+                    <textarea 
+                        id="reportDescription" 
+                        class="form-textarea large" 
+                        placeholder="Describe el problema en detalle..."
+                        rows="8"
+                        required
+                    ></textarea>
+                </div>
+                <button type="submit" class="submit-button" id="reportSubmitBtn">
+                    <span>Enviar Reporte</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-icon">⭐</span>
+                        <span class="logo-text">Eli</span>
+                    </div>
+                    <p class="footer-description">
+                        La app perfecta para motivar a tus hijos mediante un sistema 
+                        de tareas y recompensas.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="index.html#caracteristicas">Características</a></li>
+                        <li><a href="index.html#como-funciona">Cómo Funciona</a></li>
+                        <li><a href="index.html#planes">Planes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Términos y Condiciones</a></li>
+                        <li><a href="support.html">Soporte</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Eli. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(tab) {
+            // Update tabs
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            if (tab === 'advertising') {
+                document.getElementById('advertisingTab').classList.add('active');
+                document.getElementById('advertisingForm').classList.remove('form-hidden');
+                document.getElementById('reportForm').classList.add('form-hidden');
+            } else {
+                document.getElementById('reportTab').classList.add('active');
+                document.getElementById('reportForm').classList.remove('form-hidden');
+                document.getElementById('advertisingForm').classList.add('form-hidden');
+            }
+        }
+
+        function showMessage(elementId, message, isError = false) {
+            const messageDiv = document.getElementById(elementId);
+            messageDiv.innerHTML = `<div class="${isError ? 'error' : 'success'}-message">${message}</div>`;
+            setTimeout(() => {
+                messageDiv.innerHTML = '';
+            }, 5000);
+        }
+
+        function handleAdvertisingSubmit(event) {
+            event.preventDefault();
+            const submitBtn = document.getElementById('advertisingSubmitBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Enviando...</span>';
+
+            const formData = {
+                companyName: document.getElementById('companyName').value,
+                contactName: document.getElementById('contactName').value,
+                email: document.getElementById('adEmail').value,
+                phone: document.getElementById('adPhone').value,
+                message: document.getElementById('adMessage').value
+            };
+
+            // Simular envío (aquí deberías conectar con tu backend/Firebase)
+            setTimeout(() => {
+                showMessage('advertisingMessage', '¡Solicitud enviada exitosamente! Nos pondremos en contacto contigo pronto.');
+                document.getElementById('advertisingFormElement').reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span>Enviar Solicitud</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>';
+            }, 1500);
+        }
+
+        function handleReportSubmit(event) {
+            event.preventDefault();
+            const submitBtn = document.getElementById('reportSubmitBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Enviando...</span>';
+
+            const formData = {
+                subject: document.getElementById('reportSubject').value,
+                description: document.getElementById('reportDescription').value
+            };
+
+            // Simular envío (aquí deberías conectar con tu backend/Firebase)
+            setTimeout(() => {
+                showMessage('reportMessage', '¡Reporte enviado exitosamente! Gracias por ayudarnos a mejorar.');
+                document.getElementById('reportFormElement').reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span>Enviar Reporte</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>';
+            }, 1500);
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
+
