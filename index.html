@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eli - Sistema de Tareas y Recompensas para Niños</title>
+    <meta name="description" content="Eli es la app perfecta para motivar a tus hijos mediante un sistema de tareas y recompensas. Gestiona tareas, puntos y premios de forma divertida.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-icon">⭐</span>
+                    <span class="logo-text">Eli</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#caracteristicas">Características</a></li>
+                    <li><a href="#como-funciona">Cómo Funciona</a></li>
+                    <li><a href="#planes">Planes</a></li>
+                    <li><a href="#descargar" class="btn-download">Descargar</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Motiva a tus hijos con <span class="gradient-text">tareas y recompensas</span>
+                    </h1>
+                    <p class="hero-description">
+                        Eli es la app perfecta para que los niños aprendan responsabilidad mientras se divierten. 
+                        Crea tareas, asigna puntos y permite que tus hijos canjeen increíbles recompensas.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#descargar" class="btn btn-primary">
+                            <span>Descargar Ahora</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 3V17M10 17L15 12M10 17L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="#como-funciona" class="btn btn-secondary">
+                            Ver Cómo Funciona
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Familias</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">50k+</div>
+                            <div class="stat-label">Tareas Completadas</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">4.8★</div>
+                            <div class="stat-label">Calificación</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="mockup-content">
+                                <div class="mockup-header">
+                                    <div class="mockup-avatar"></div>
+                                    <div class="mockup-text">
+                                        <div class="mockup-line short"></div>
+                                        <div class="mockup-line"></div>
+                                    </div>
+                                </div>
+                                <div class="mockup-points">
+                                    <div class="points-circle">
+                                        <span>250</span>
+                                        <span class="points-label">Puntos</span>
+                                    </div>
+                                </div>
+                                <div class="mockup-tasks">
+                                    <div class="mockup-task"></div>
+                                    <div class="mockup-task"></div>
+                                    <div class="mockup-task completed"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="caracteristicas">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Características Principales</h2>
+                <p class="section-description">
+                    Todo lo que necesitas para motivar y enseñar responsabilidad a tus hijos
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M9 11l3 3L22 4"></path>
+                            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Gestión de Tareas</h3>
+                    <p class="feature-description">
+                        Crea tareas personalizadas con puntos, categorías y recordatorios. 
+                        Asigna tareas a uno o varios niños.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #EC4899 0%, #F472B6 100%);">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M20 7h-4V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v3H4a1 1 0 00-1 1v11a2 2 0 002 2h16a2 2 0 002-2V8a1 1 0 00-1-1z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Sistema de Recompensas</h3>
+                    <p class="feature-description">
+                        Define recompensas que tus hijos pueden canjear con los puntos 
+                        ganados completando tareas.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #10B981 0%, #34D399 100%);">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Seguimiento de Puntos</h3>
+                    <p class="feature-description">
+                        Visualiza el progreso de cada niño con puntos totales, semanales 
+                        y mensuales. Historial completo de actividades.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 00-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 010 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Múltiples Perfiles</h3>
+                    <p class="feature-description">
+                        Gestiona varios niños en una sola cuenta. Cada niño tiene su 
+                        propio perfil, avatar y puntos.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 2a3 3 0 00-3 3v7a3 3 0 006 0V5a3 3 0 00-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 01-14 0v-2"></path>
+                            <line x1="12" y1="18" x2="12" y2="22"></line>
+                            <line x1="8" y1="22" x2="16" y2="22"></line>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Juegos y Entretenimiento</h3>
+                    <p class="feature-description">
+                        Incluye juegos educativos, cuentos y audiolibros para que los 
+                        niños se diviertan mientras aprenden.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Recordatorios y Notificaciones</h3>
+                    <p class="feature-description">
+                        Configura recordatorios para tareas importantes y recibe 
+                        notificaciones de completado de tareas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="como-funciona">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Cómo Funciona</h2>
+                <p class="section-description">
+                    Comienza a usar Eli en tan solo unos pasos
+                </p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Crea Perfiles de Niños</h3>
+                        <p class="step-description">
+                            Agrega perfiles personalizados para cada niño con su nombre, 
+                            edad, avatar y color favorito.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Define Tareas y Puntos</h3>
+                        <p class="step-description">
+                            Crea tareas con descripción, puntos a ganar y categorías. 
+                            Asigna tareas a uno o varios niños.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Configura Recompensas</h3>
+                        <p class="step-description">
+                            Establece recompensas que tus hijos pueden canjear con los 
+                            puntos ganados completando tareas.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">¡Disfruta los Resultados!</h3>
+                        <p class="step-description">
+                            Observa cómo tus hijos se motivan y aprenden responsabilidad 
+                            mientras ganan puntos y canjean recompensas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section class="plans" id="planes">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Planes y Precios</h2>
+                <p class="section-description">
+                    Elige el plan que mejor se adapte a tu familia
+                </p>
+            </div>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">Gratis</h3>
+                        <div class="plan-price">
+                            <span class="price-amount">$0</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>1 niño</li>
+                        <li>Tareas ilimitadas</li>
+                        <li>Recompensas ilimitadas</li>
+                        <li>Seguimiento de puntos</li>
+                        <li>Historial básico</li>
+                    </ul>
+                    <a href="#descargar" class="btn btn-outline">Comenzar Gratis</a>
+                </div>
+                <div class="plan-card featured">
+                    <div class="plan-badge">Popular</div>
+                    <div class="plan-header">
+                        <h3 class="plan-name">2 Niños</h3>
+                        <div class="plan-price">
+                            <span class="price-amount">$2.99</span>
+                            <span class="price-period">pago único</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>2 niños</li>
+                        <li>Tareas ilimitadas</li>
+                        <li>Recompensas ilimitadas</li>
+                        <li>Seguimiento de puntos</li>
+                        <li>Historial completo</li>
+                        <li>Estadísticas avanzadas</li>
+                    </ul>
+                    <a href="#descargar" class="btn btn-primary">Elegir Plan</a>
+                </div>
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">Mensual</h3>
+                        <div class="plan-price">
+                            <span class="price-amount">$4.99</span>
+                            <span class="price-period">/mes</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>Niños ilimitados</li>
+                        <li>Tareas ilimitadas</li>
+                        <li>Recompensas ilimitadas</li>
+                        <li>Seguimiento de puntos</li>
+                        <li>Historial completo</li>
+                        <li>Estadísticas avanzadas</li>
+                        <li>Soporte prioritario</li>
+                    </ul>
+                    <a href="#descargar" class="btn btn-outline">Elegir Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="descargar">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">¿Listo para comenzar?</h2>
+                <p class="cta-description">
+                    Descarga Eli ahora y transforma la forma en que tus hijos aprenden responsabilidad
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary btn-large">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>App Store</span>
+                    </a>
+                    <a href="#" class="btn btn-primary btn-large">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                        <span>Google Play</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-icon">⭐</span>
+                        <span class="logo-text">Eli</span>
+                    </div>
+                    <p class="footer-description">
+                        La app perfecta para motivar a tus hijos mediante un sistema 
+                        de tareas y recompensas.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#caracteristicas">Características</a></li>
+                        <li><a href="#como-funciona">Cómo Funciona</a></li>
+                        <li><a href="#planes">Planes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Soporte</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Ayuda</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Términos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Eli. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
