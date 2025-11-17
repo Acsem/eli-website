@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - Eli</title>
+    <meta name="description" content="Política de Privacidad de la aplicación Eli">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .privacy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 20px 60px;
+        }
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .privacy-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+        .privacy-content {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 4px 20px var(--shadow);
+            line-height: 1.8;
+            color: var(--text);
+        }
+        .privacy-content h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+        .privacy-content h1:first-child {
+            margin-top: 0;
+        }
+        .privacy-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        .privacy-content p {
+            margin-bottom: 16px;
+        }
+        .privacy-content ul {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+        .privacy-content li {
+            margin-bottom: 8px;
+        }
+        .privacy-content strong {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 24px;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            color: var(--primary-dark);
+            transform: translateX(-4px);
+        }
+        @media (max-width: 768px) {
+            .privacy-container {
+                padding: 100px 20px 40px;
+            }
+            .privacy-title {
+                font-size: 2rem;
+            }
+            .privacy-content {
+                padding: 24px;
+            }
+            .privacy-content h1 {
+                font-size: 1.75rem;
+            }
+            .privacy-content h3 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-icon">⭐</span>
+                    <span class="logo-text">Eli</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#caracteristicas">Características</a></li>
+                    <li><a href="index.html#como-funciona">Cómo Funciona</a></li>
+                    <li><a href="index.html#planes">Planes</a></li>
+                    <li><a href="support.html">Soporte</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="privacy-container">
+        <a href="index.html" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Volver al inicio
+        </a>
+        
+        <div class="privacy-header">
+            <h1 class="privacy-title">Política de Privacidad</h1>
+            <p style="color: var(--text-light);">Última actualización: <span id="lastUpdated"></span></p>
+        </div>
+
+        <div class="privacy-content" id="privacyContent">
+            <!-- El contenido se cargará desde JavaScript -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-icon">⭐</span>
+                        <span class="logo-text">Eli</span>
+                    </div>
+                    <p class="footer-description">
+                        La app perfecta para motivar a tus hijos mediante un sistema 
+                        de tareas y recompensas.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="index.html#caracteristicas">Características</a></li>
+                        <li><a href="index.html#como-funciona">Cómo Funciona</a></li>
+                        <li><a href="index.html#planes">Planes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Términos y Condiciones</a></li>
+                        <li><a href="privacy.html">Política de Privacidad</a></li>
+                        <li><a href="support.html">Soporte</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Eli. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Política de Privacidad en español
+        const privacyContent = `
+# POLÍTICA DE PRIVACIDAD - ELI APP
+
+Bienvenido a la aplicación ELI, desarrollada y operada por [Nombre de la Empresa] (referido como 'nosotros', 'nos', 'nuestro', 'ELI'). Esta política le proporciona detalles sobre la información que recopilamos de usted y los usos que hacemos de su información. Si no desea que accedamos y/o usemos su Información Personal como se describe aquí, por favor no nos proporcione ninguna.
+
+### 1. INFORMACIÓN QUE RECOPILAMOS
+
+Recopilamos información que usted nos proporciona directamente, información que recopilamos automáticamente cuando usa nuestros servicios, e información de terceros.
+
+**Información que usted nos proporciona:**
+* Nombre completo
+* Dirección de correo electrónico
+* Contraseña (encriptada)
+* Información del perfil (rol, tipo de usuario)
+* Información de niños (nombres, edades, géneros, actividades favoritas, fotos de perfil)
+* Tareas y recompensas creadas
+* Historial de puntos y actividades
+* Cualquier otra información que elija proporcionar
+
+**Información recopilada automáticamente:**
+* Información del dispositivo (tipo, sistema operativo, identificadores únicos)
+* Información de uso (cómo interactúa con la aplicación)
+* Información de ubicación (si se proporciona permiso)
+* Cookies y tecnologías similares
+
+**Información de terceros:**
+* Si se conecta a través de servicios de terceros (por ejemplo, Google, Apple), podemos recibir información de esos servicios
+
+### 2. CÓMO USAMOS SU INFORMACIÓN
+
+Usamos la información que recopilamos para:
+* Proporcionar, mantener y mejorar nuestros servicios
+* Procesar transacciones y enviar notificaciones relacionadas
+* Enviar comunicaciones técnicas, actualizaciones y alertas de seguridad
+* Responder a sus comentarios, preguntas y solicitudes de servicio al cliente
+* Personalizar y mejorar su experiencia
+* Monitorear y analizar tendencias, uso y actividades
+* Detectar, prevenir y abordar problemas técnicos y actividades fraudulentas o ilegales
+* Cumplir con obligaciones legales
+
+### 3. COMPARTIR DE INFORMACIÓN
+
+No vendemos su información personal. Podemos compartir su información en las siguientes circunstancias:
+
+**Con su consentimiento:** Podemos compartir su información cuando nos dé permiso para hacerlo.
+
+**Proveedores de servicios:** Podemos compartir información con proveedores de servicios que realizan servicios en nuestro nombre, como procesamiento de pagos, análisis de datos, servicios de correo electrónico y alojamiento.
+
+**Requisitos legales:** Podemos divulgar información si creemos que es necesario para cumplir con una ley, regulación, proceso legal o solicitud gubernamental.
+
+**Protección de derechos:** Podemos divulgar información cuando creemos que es apropiado para proteger los derechos, propiedad o seguridad de ELI, nuestros usuarios u otros.
+
+**Transferencias comerciales:** Si estamos involucrados en una fusión, adquisición o venta de activos, su información puede ser transferida.
+
+### 4. SEGURIDAD DE LA INFORMACIÓN
+
+Implementamos medidas de seguridad técnicas, administrativas y físicas diseñadas para proteger su información personal contra acceso no autorizado, alteración, divulgación o destrucción. Sin embargo, ningún método de transmisión por Internet o método de almacenamiento electrónico es 100% seguro, y no podemos garantizar seguridad absoluta.
+
+### 5. RETENCIÓN DE DATOS
+
+Conservamos su información personal durante el tiempo necesario para cumplir con los propósitos descritos en esta política, a menos que se requiera o permita un período de retención más largo por ley.
+
+### 6. SUS DERECHOS
+
+Dependiendo de su ubicación, puede tener ciertos derechos con respecto a su información personal, que pueden incluir:
+
+* **Acceso:** El derecho a acceder a su información personal
+* **Rectificación:** El derecho a corregir información inexacta
+* **Eliminación:** El derecho a solicitar la eliminación de su información
+* **Portabilidad:** El derecho a recibir su información en un formato estructurado
+* **Oposición:** El derecho a oponerse al procesamiento de su información
+* **Restricción:** El derecho a solicitar la restricción del procesamiento
+
+Para ejercer estos derechos, contáctenos en [email de contacto].
+
+### 7. INFORMACIÓN DE MENORES
+
+ELI está diseñada para ser utilizada por adultos que gestionan información de menores. No recopilamos intencionalmente información personal de menores sin el consentimiento de los padres o tutores. Si cree que hemos recopilado información de un menor sin el consentimiento apropiado, contáctenos inmediatamente.
+
+### 8. COOKIES Y TECNOLOGÍAS SIMILARES
+
+Utilizamos cookies y tecnologías similares para recopilar información y mejorar nuestros servicios. Puede controlar el uso de cookies a través de la configuración de su dispositivo.
+
+### 9. TRANSFERENCIAS INTERNACIONALES
+
+Su información puede ser transferida y procesada en países distintos al suyo. Al usar nuestros servicios, usted consiente la transferencia de su información a estos países.
+
+### 10. CAMBIOS A ESTA POLÍTICA
+
+Podemos actualizar esta Política de Privacidad de vez en cuando. Le notificaremos cualquier cambio publicando la nueva Política de Privacidad en esta página y actualizando la fecha de "Última actualización".
+
+### 11. CONTACTO
+
+Si tiene preguntas o inquietudes sobre esta Política de Privacidad o sobre su información, puede contactarnos en:
+
+**Email:** [email de contacto]
+**Dirección:** [dirección de la empresa]
+
+Si se encuentra en la Unión Europea con derechos bajo el GDPR y tiene alguna queja sobre nuestras prácticas de privacidad, tiene derecho a presentar una queja ante una autoridad supervisora.
+        `;
+
+        // Convertir markdown básico a HTML
+        function markdownToHtml(markdown) {
+            let html = markdown;
+            
+            // Headers primero (de más específico a menos)
+            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+            html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+            
+            // Bold
+            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            
+            // Lists - procesar líneas con asteriscos
+            const lines = html.split('\n');
+            let inList = false;
+            let result = [];
+            
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                const listMatch = line.match(/^\* (.*)$/);
+                
+                if (listMatch) {
+                    if (!inList) {
+                        result.push('<ul>');
+                        inList = true;
+                    }
+                    result.push(`<li>${listMatch[1]}</li>`);
+                } else {
+                    if (inList) {
+                        result.push('</ul>');
+                        inList = false;
+                    }
+                    if (line.trim() && !line.match(/^<[h|u]/)) {
+                        result.push(`<p>${line.trim()}</p>`);
+                    } else if (line.trim()) {
+                        result.push(line);
+                    }
+                }
+            }
+            
+            if (inList) {
+                result.push('</ul>');
+            }
+            
+            html = result.join('\n');
+            
+            // Limpiar párrafos vacíos y múltiples saltos
+            html = html.replace(/<p><\/p>/g, '');
+            html = html.replace(/\n{3,}/g, '\n\n');
+            
+            return html;
+        }
+
+        document.getElementById('privacyContent').innerHTML = markdownToHtml(privacyContent);
+        document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString('es-ES');
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
+
