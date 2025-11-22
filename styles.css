@@ -615,52 +615,167 @@ body {
 
 /* How It Works Section */
 .how-it-works {
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-xl) 0;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.how-it-works::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+    animation: magicalPulse 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.how-it-works .section-title {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-xl);
-    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .step {
     display: flex;
-    gap: var(--spacing-md);
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    background: white;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    min-width: 140px;
+    cursor: pointer;
+}
+
+.step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.step:hover::before {
+    left: 100%;
+}
+
+.step:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 40px rgba(139, 92, 246, 0.3);
+}
+
+.step-number-wrapper {
+    position: relative;
+    display: inline-block;
 }
 
 .step-number {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
 }
 
-.step-content {
-    flex: 1;
+.step:hover .step-number {
+    transform: rotate(360deg) scale(1.1);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+}
+
+.step-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 1;
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+.step:hover .step-glow {
+    opacity: 1;
+    width: 90px;
+    height: 90px;
 }
 
 .step-title {
-    font-size: 1.25rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-xs);
+    margin: 0;
     color: var(--text);
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.step:hover .step-title {
+    color: var(--primary);
+}
+
+.step-arrow {
+    color: var(--primary);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--spacing-xs);
+}
+
+.step-arrow svg {
+    width: 20px;
+    height: 20px;
 }
 
 .step-description {
-    color: var(--text-light);
-    line-height: 1.7;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .steps {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .step-arrow {
+        transform: rotate(90deg);
+        padding: var(--spacing-xs) 0;
+    }
 }
 
 /* Plans Section */
